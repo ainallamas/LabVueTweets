@@ -1,16 +1,23 @@
 <template>
-    <div class="app">
-        <Tweet />
+
+<div class="app">
+      
+    <div v-for="tweet in tweets">
+    <Tweet :tweet="tweet"/>
     </div>
+
+</div>
+
 </template>
   
 <script setup>
 import Tweet from './components/Tweet.vue';
+
 const tweets = [
     {
         user: {
             name: "Thoughts of Dog®",
-            image: "https://placedog.net/100/100",
+            image: "https://www.collinsdictionary.com/images/full/dog_230497594.jpg",
             handle: "dog_feelings",
         },
         timestamp: "1h ago",
@@ -28,13 +35,15 @@ const tweets = [
     {
         user: {
             name: "Thoughts of Dog®",
-            image: "https://placedog.net/100/100",
+            image: "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg",
             handle: "dog_feelings",
         },
         timestamp: "3h ago",
         message: "here is what. i plan to accomplish today: \n\n2. bark loudly. but at nothing \n7. lose my ball under the couch\n7b. politely ask the human. to get my ball\n3. immediately lose it again. under the same couch\n4. big nap. you have worked hard\n2. repeat",
     },
 ]
+
+
 </script>
   
 <style>
